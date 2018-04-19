@@ -16,6 +16,8 @@ def codes():
     code = input("Ingrese codigo del producto:")
     arch.write(code)
     arch.write("\n")
+    if (validateCode(value) == True)
+      text = (input("Este codigo ya existe"))
 """a+=1
     if a > 1:
         arch = open('productos.txt','r')
@@ -41,6 +43,22 @@ def units():
     unit = input("Ingrese unidad del producto L o G: ")
     arch.write(unit)
     arch.write("\n")
+    
+def validateCode(self, validateCodes):
+    try:
+        f = open('productos.txt','r')
+    except FileNotFoundError:
+        print ("--> ERROR!! No Existe Archivo de Usuarios")  
+        return (False) 
+
+    for linea in f.readlines():
+
+        linea = linea.split(',')
+        code = linea[1]
+
+        if (validateCodes == code):
+            return (True)
+    return (False)
  
 if __name__ == "__main__":
     print ("Ingrese cantidad de productos ")
