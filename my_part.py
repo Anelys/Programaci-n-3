@@ -3,6 +3,7 @@ import os
 
 class usuariosCodigo (object):
     def crearArchivoProductos(self):
+        global f
         f = open('productos.txt', 'w')
         # arch.close()
 
@@ -14,12 +15,15 @@ class usuariosCodigo (object):
             return (False)
 
         for linea in f.readlines():
-
             linea = linea.split(',')
+            global description 
             description = linea [0]
             code = linea[1]
+            global price
             price = linea [2]
+            global itbm
             itbm = linea [3]
+            global unit
             unit = linea [4]
 
             if (validateCodes == code):
